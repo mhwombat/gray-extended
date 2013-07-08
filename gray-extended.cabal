@@ -19,7 +19,7 @@ license-file:   LICENSE
 library
   hs-source-dirs:  src
   build-depends:   base ==4.*
-  ghc-options:     -Wall -Werror -rtsopts
+  ghc-options:     -Wall
   exposed-modules: Codec.Gray
 
 test-suite gray-extended-tests
