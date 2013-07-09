@@ -1,5 +1,5 @@
 name:           gray-extended
-version:        1.3
+version:        1.4
 synopsis:       Gray encoding schemes
 description:    Gray codes satisfy the property that two successive values 
                 differ in only one digit. Usually the term \"Gray code\"

@@ -17,10 +17,13 @@
 module Codec.Gray 
   (
     grayCodes,
+    integralToGray,
+    grayToIntegral,
     naryGrayCodes
   ) where
 
 import Data.List (foldl')
+import Data.Bits (Bits, shiftR, xor)
 
 -- | @'grayCodes' k@ generates the list of Binary Reflected Gray Code
 --   (BRGC) numbers of length k. This code is cyclic.
@@ -29,6 +32,21 @@ grayCodes 0 = [[]]
 grayCodes k = 
   let xs = grayCodes (k-1) in map (False:) xs ++ map (True:) (reverse xs)
 
+-- | @'integralToGray' n@ encodes @n@ using a BRGC, and returns the
+--   resulting bits as an integer. For example, encoding @17@ in BRGC
+--   results in @11001@, or 25. So @integralToGray 17@ returns @25@.
+integralToGray :: Bits a => a -> a
+integralToGray n = (n `shiftR` 1) `xor` n
+
+-- | @'grayToIntegral' n@ decodes @n@ using a BRGC, and returns the
+--   resulting integer. For example, 25 is @11001@, which is the code
+--   for 17. So @grayToIntegral 25@ returns @17@.
+--   (see @'integralToGray'@ for 
+grayToIntegral :: (Num a, Bits a) => a -> a
+grayToIntegral n = f n (n `shiftR` 1)
+  where f k m | m /= 0     = f (k `xor` m) (m `shiftR` 1)
+              | otherwise = k
+  
 -- | @'naryGrayCodes' xs k@ generates a non-Boolean (or n-ary) Gray code
 --   of length @k@ using the elements of @x@ as "digits". This code is
 --   cyclic.
