@@ -41,15 +41,14 @@ integralToGray n = (n `shiftR` 1) `xor` n
 -- | @'grayToIntegral' n@ decodes @n@ using a BRGC, and returns the
 --   resulting integer. For example, 25 is @11001@, which is the code
 --   for 17. So @grayToIntegral 25@ returns @17@.
---   (see @'integralToGray'@ for 
 grayToIntegral :: (Num a, Bits a) => a -> a
 grayToIntegral n = f n (n `shiftR` 1)
   where f k m | m /= 0     = f (k `xor` m) (m `shiftR` 1)
               | otherwise = k
   
 -- | @'naryGrayCodes' xs k@ generates a non-Boolean (or n-ary) Gray code
---   of length @k@ using the elements of @x@ as "digits". This code is
---   cyclic.
+--   of length @k@ using the elements of @xs@ as \"digits\". This code
+--   is cyclic.
 --
 --   Ex: @'naryGrayCodes' \"012\" 4@ generates a ternary Gray code that
 --   is four digits long.
