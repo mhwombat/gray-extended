@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4728446479b06872d39a08ea9db544dc544d7e99f62c2d6a038f53ca1f739304
+-- hash: 1a5c42639130c135e232c7689ca7e256d24235e76025fadf6e431e42aa038cb5
 
 name:           gray-extended
-version:        1.5.3
+version:        1.5.4
 synopsis:       Gray encoding schemes
 description:    Please see the README on GitHub at <https://github.com/mhwombat/gray-extended#readme>
 category:       Math
