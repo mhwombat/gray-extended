@@ -1,13 +1,7 @@
-cabal-version: 1.12
-
--- This file has been generated from package.yaml by hpack version 0.31.1.
---
--- see: https://github.com/sol/hpack
---
--- hash: 1a5c42639130c135e232c7689ca7e256d24235e76025fadf6e431e42aa038cb5
+cabal-version: 1.13
 
 name:           gray-extended
-version:        1.5.4
+version:        1.5.6
 synopsis:       Gray encoding schemes
 description:    Please see the README on GitHub at <https://github.com/mhwombat/gray-extended#readme>
 category:       Math
@@ -15,7 +9,7 @@ homepage:       https://github.com/mhwombat/gray-extended#readme
 bug-reports:    https://github.com/mhwombat/gray-extended/issues
 author:         Amy de Buitléir
 maintainer:     amy@nualeargais.ie
-copyright:      2018 Amy de Buitléir
+copyright:      2010-2019 Amy de Buitléir
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
