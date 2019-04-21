@@ -1,5 +1,8 @@
 # Build artifacts
 .stack-work
+.ghc.environment.*
+cabal.project.local
+dist-newstyle
 
 # Backup files
 *~

@@ -1,7 +1,8 @@
 # Changelog for gray-extended
 
+1.5.7 Simplified nix configuration.
+
 1.5.6 Corrected copyright info.
-      Simplified nix configuration.
 
 1.5.5 Revamped to work with Nix + cabal-install
 
