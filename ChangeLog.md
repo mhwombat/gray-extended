@@ -1,5 +1,7 @@
 # Changelog for gray-extended
 
+1.5.8 Simplified cabal file.
+
 1.5.7 Simplified nix configuration.
 
 1.5.6 Corrected copyright info.
