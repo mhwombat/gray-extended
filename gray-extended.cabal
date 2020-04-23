@@ -30,7 +30,7 @@ test-suite gray-extended-test
       Codec.GrayQC
       Paths_gray_extended
   hs-source-dirs:      test
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:
       QuickCheck ==2.12.*
     , base >=4.7 && <5
