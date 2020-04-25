@@ -9,6 +9,8 @@ mkDerivation {
   testHaskellDepends = [
     base QuickCheck test-framework test-framework-quickcheck2
   ];
+  enableLibraryProfiling = true;
+  enableExecutableProfiling = true;
   homepage = "https://github.com/mhwombat/gray-extended";
   description = "Gray encoding schemes";
   license = stdenv.lib.licenses.bsd3;
