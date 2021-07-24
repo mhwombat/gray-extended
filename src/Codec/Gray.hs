@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 -- |
 -- Module      :  Codec.Gray
--- Copyright   :  (c) Amy de Buitléir 2011-2019
+-- Copyright   :  (c) Amy de Buitléir 2011-2021
 -- License     :  BSD-style
 -- Maintainer  :  amy@nualeargais.ie
 -- Stability   :  experimental
