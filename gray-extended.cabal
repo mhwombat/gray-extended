@@ -24,12 +24,12 @@ common common-stuff
        
 library
   import: common-stuff
+  hs-source-dirs:   src
   exposed-modules:  Codec.Gray
   other-modules:    Paths_gray_extended
   autogen-modules:  Paths_gray_extended
   ghc-options:      -Wall -Wunused-packages
   build-depends:    base >=4.7 && <5
-  hs-source-dirs:   src
 
 test-suite gray-extended-test
   import: common-stuff
