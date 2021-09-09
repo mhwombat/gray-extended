@@ -1,5 +1,7 @@
 # Changelog for gray-extended
 
+1.5.10 De-linting.
+
 1.5.9 Simplified cabal file again.
 
 1.5.8 Simplified cabal file.

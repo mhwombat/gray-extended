@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               gray-extended
-version:            1.5.9
+version:            1.5.10
 synopsis:           Gray encoding schemes
 description:
   Please see the README on GitHub at <https://github.com/mhwombat/gray-extended#readme>

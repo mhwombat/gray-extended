@@ -14,7 +14,7 @@
 -- /cyclic/: the last and first values differ in only one digit.
 --
 ------------------------------------------------------------------------
-module Codec.Gray 
+module Codec.Gray
   (
     grayCodes,
     integralToGray,
@@ -30,7 +30,7 @@ import Data.Bits (Bits, shiftR, xor)
 --   (BRGC) numbers of length k. This code is cyclic.
 grayCodes :: Int -> [[Bool]]
 grayCodes 0 = [[]]
-grayCodes k = 
+grayCodes k =
   let xs = grayCodes (k-1) in map (False:) xs ++ map (True:) (reverse xs)
 
 {-# INLINABLE integralToGray #-}
@@ -48,7 +48,7 @@ grayToIntegral :: (Num a, Bits a) => a -> a
 grayToIntegral n = f n (n `shiftR` 1)
   where f k m | m /= 0     = f (k `xor` m) (m `shiftR` 1)
               | otherwise = k
-  
+
 {-# INLINABLE naryGrayCodes #-}
 -- | @'naryGrayCodes' xs k@ generates a non-Boolean (or n-ary) Gray code
 --   of length @k@ using the elements of @xs@ as \"digits\". This code
@@ -67,5 +67,5 @@ shift :: [a] -> [a]
 shift as = last as : init as
 
 prefixAndShift :: ([[a]],[[a]]) -> [a] -> ([[a]],[[a]])
-prefixAndShift (ys,zs) xs = (shift ys, zs ++ (map (xs++) ys))
+prefixAndShift (ys,zs) xs = (shift ys, zs ++ map (xs++) ys)
 
