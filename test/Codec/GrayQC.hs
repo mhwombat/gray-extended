@@ -3,13 +3,14 @@ module Codec.GrayQC
     test
   ) where
 
-import Codec.Gray
-import Data.List (nub)
-import Data.Word (Word8)
-import Test.Framework as TF (Test, testGroup)
-import Test.Framework.Providers.QuickCheck2 (testProperty)
-import Test.QuickCheck ((==>), Property, Gen, Arbitrary, arbitrary, choose,
-  property, sized)
+import           Codec.Gray
+import           Data.List                            (nub)
+import           Data.Word                            (Word8)
+import           Test.Framework                       as TF (Test, testGroup)
+import           Test.Framework.Providers.QuickCheck2 (testProperty)
+import           Test.QuickCheck                      (Arbitrary, Gen, Property,
+                                                       arbitrary, choose, sized,
+                                                       (==>))
 
 prop_successive_values_differ_in_one_place1 :: Int -> Property
 prop_successive_values_differ_in_one_place1 k = k > 0 ==>
@@ -29,14 +30,14 @@ sizedTestParms n = do
 instance Arbitrary TestParms where
   arbitrary = sized sizedTestParms
 
-prop_successive_values_differ_in_one_place2 :: TestParms -> Property
-prop_successive_values_differ_in_one_place2 (TestParms ds k) = property $
-  nub (diffCounts xs) == [1]
+prop_successive_values_differ_in_one_place2 :: TestParms -> Bool
+prop_successive_values_differ_in_one_place2 (TestParms ds k)
+  = nub (diffCounts xs) == [1]
     where xs = naryGrayCodes ds k
 
 diffCounts :: Eq b => [[b]] -> [Int]
-diffCounts [] = []
-diffCounts [_] = []
+diffCounts []         = []
+diffCounts [_]        = []
 diffCounts (x1:x2:xs) = diffCount x1 x2 : diffCounts (x2:xs)
 
 diffCount :: Eq b => [b] -> [b] -> Int
@@ -50,9 +51,9 @@ prop_decoding_round_trippable :: Int -> Property
 prop_decoding_round_trippable n =
   n >= 0 ==> (integralToGray . grayToIntegral $ n) == n
 
-prop_integralToGray_same_as_encode :: Word8 -> Property
-prop_integralToGray_same_as_encode n =
-  property $ integralToGray n == boolsToIntegral bits
+prop_integralToGray_same_as_encode :: Word8 -> Bool
+prop_integralToGray_same_as_encode n
+  = integralToGray n == boolsToIntegral bits
     where bits = grayCodes 8 !! fromIntegral n
 
 boolsToIntegral :: Num c => [Bool] -> c
