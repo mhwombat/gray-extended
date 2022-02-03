@@ -1,5 +1,8 @@
 # Changelog for gray-extended
 
+1.5.11 Switch to Nix flake builds.
+       Update copyright.
+
 1.5.10 De-linting.
 
 1.5.9 Simplified cabal file again.
