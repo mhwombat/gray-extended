@@ -1,5 +1,7 @@
 # Changelog for gray-extended
 
+1.5.12 Reformatted source code.
+
 1.5.11 Switch to Nix flake builds.
        Update copyright.
 

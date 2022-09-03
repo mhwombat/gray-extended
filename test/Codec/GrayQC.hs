@@ -3,14 +3,14 @@ module Codec.GrayQC
     test
   ) where
 
-import           Codec.Gray
-import           Data.List                            (nub)
-import           Data.Word                            (Word8)
-import           Test.Framework                       as TF (Test, testGroup)
-import           Test.Framework.Providers.QuickCheck2 (testProperty)
-import           Test.QuickCheck                      (Arbitrary, Gen, Property,
-                                                       arbitrary, choose, sized,
-                                                       (==>))
+import Codec.Gray
+import Data.List                            (nub)
+import Data.Word                            (Word8)
+import Test.Framework                       as TF (Test, testGroup)
+import Test.Framework.Providers.QuickCheck2 (testProperty)
+import Test.QuickCheck                      (Arbitrary, Gen, Property,
+                                             arbitrary, choose, sized,
+                                             (==>))
 
 prop_successive_values_differ_in_one_place1 :: Int -> Property
 prop_successive_values_differ_in_one_place1 k = k > 0 ==>

@@ -57,7 +57,7 @@ grayToIntegral n = f n (n `shiftR` 1)
 --   Ex: @'naryGrayCodes' \"012\" 4@ generates a ternary Gray code that
 --   is four digits long.
 naryGrayCodes :: [a] -> Int -> [[a]]
-naryGrayCodes xs 1 = map (\x -> [x]) xs
+naryGrayCodes xs 1 = map (: []) xs
 naryGrayCodes xs k = snd $ foldl' prefixAndShift (ys,[]) xs'
   where ys = naryGrayCodes xs 1
         xs' = naryGrayCodes xs (k-1)
